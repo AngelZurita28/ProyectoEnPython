@@ -35,8 +35,8 @@ class ColaDoble:
         if self.head is None:
             return
         if self.head.siguiente is None:
-            self.head = NodoDoble()
-            self.tail = NodoDoble()
+            self.head = None
+            self.tail = None
             return
         self.head = self.head.siguiente
         self.head.anterior = None
