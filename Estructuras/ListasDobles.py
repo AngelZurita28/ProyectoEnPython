@@ -1,45 +1,37 @@
-class Nodo:
-    def __init__(self, dato):
-        self.dato = ""
-        self.siguiente = None
-        self.anterior = None
-
-    def imprimirNodo(self):
-        return self.dato
+from Nodo import *
 
 
 class listaDoble:
-    head = Nodo
+    head: NodoDoble
+    tail: NodoDoble
     def __init__(self):
-        self.primero = None
-        self.ultimo = None
         self.head = None
+        self.tail = None
 
     def insertar(self, dato):
-        h = self.head
+        nuevo = NodoDoble()
+        nuevo.dato = dato
         if self.head is None:
-           n = Nodo(dato)
-           self.primero = n
-           self.ulimo = self.primero
-           return
-        n = Nodo(dato)
-        self.ultimo.siguiente = n
-        n.anterior = self.ultimo
-        self.ultimo = n
+            self.head = nuevo
+            self.tail = self.head
+            return
+        self.tail.siguiente = nuevo
+        nuevo.anterior = self.tail
+        self.tail = nuevo
 
     def imprimirLista(self):
         h = self.head
         cadena = ""
-        if self.head is not None:
-            while self.h.siguiente is not None:
-                cadena += self.h.imprimirNodo()
+        while h is not None:
+            cadena += h.imprimirNodo() + " "
+            h = h.siguiente
         return cadena
 
 
 if __name__ == '__main__':
     end = 0
-    milista = listaDoble
+    milista = listaDoble()
     while end == 0:
         print("Ingrese un dato: ")
-        milista.insertar(listaDoble, input())
-        milista.imprimirLista()
+        milista.insertar(input())
+        print(milista.imprimirLista())
