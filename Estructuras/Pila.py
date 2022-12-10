@@ -1,19 +1,15 @@
+from Nodo import *
 
-class Nodo:
-    def __init__(self, dato):
-        self.dato = dato
-        self.siguiente = None
-
-    def imprimirNodo(self):
-        return self.dato + ", "
 
 class Pila:
-    top = Nodo
+    top: Nodo
 
     def __init__(self):
         self.top = None
 
-    def insertar(self, n):
+    def insertar(self, dato):
+        n = Nodo()
+        n.dato = dato
         if self.top is None:
             self.top = n
             return
@@ -24,7 +20,7 @@ class Pila:
         t = self.top
         cadena = ""
         while t is not None:
-            cadena += t.imprimirNodo()
+            cadena += t.imprimirNodo() + " "
             t = t.siguiente
         return cadena
 
@@ -37,6 +33,5 @@ if __name__ == '__main__':
         if dato.upper() == "i":
             print(p.imprimir())
         else:
-            n = Nodo(dato)
-            p.insertar(n)
+            p.insertar(dato)
             print(p.imprimir())
