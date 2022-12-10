@@ -1,4 +1,5 @@
 import random
+import keyboard
 
 
 def burbuja(n):
@@ -35,3 +36,6 @@ if __name__ == '__main__':
         cadena += str(item) + ", "
     print(cadena)
     burbuja(tamano)
+
+    print("presiona cualquier tecla para terminar...")
+    keyboard.read_key()
