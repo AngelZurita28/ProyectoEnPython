@@ -1,11 +1,4 @@
-import random
-
-
-class NodoABB:
-    def __init__(self, dato):
-        self.dato = dato
-        self.izquierdo = None
-        self.derecho = None
+from Nodo import NodoABB
 
 class Arbol:
     raiz = NodoABB
@@ -19,7 +12,8 @@ class Arbol:
 
     def insertarr(self, raiz, nuevodato):
         if raiz is None:
-            raiz = NodoABB(nuevodato)
+            raiz = NodoABB()
+            raiz.dato = nuevodato
             return raiz
         if raiz.dato > nuevodato:
             raiz.izquierdo = self.insertarr(raiz.izquierdo, nuevodato)
@@ -62,21 +56,22 @@ class Arbol:
         return nodoActual
 
     def inorden(self):
-        cadena = ""
         self.inordenr(self.raiz)
+        return
 
     def inordenr(self, rama):
         if rama is not None:
             self.inordenr(rama.izquierdo)
-            print(str(rama.dato))
+            print(str(rama.dato) + " ", end="")
             self.inordenr(rama.derecho)
+        return
 
     def preorden(self):
         self.preordenr(self.raiz)
 
     def preordenr(self, rama):
         if rama is not None:
-            print(str(rama.dato))
+            print(str(rama.dato) + " ", end="")
             self.preordenr(rama.izquierdo)
             self.preordenr(rama.derecho)
 
@@ -87,15 +82,18 @@ class Arbol:
         if rama is not None:
             self.postordenr(rama.izquierdo)
             self.postordenr(rama.derecho)
-            print(str(rama.dato))
+            print(str(rama.dato) + " ", end="")
 
 def mostrarDatos(arbol):
     print("Datos ordenados en inorden:..")
     arbol.inorden()
+    print()
     print("Datos ordenados en preorden:..")
     arbol.preorden()
+    print()
     print("Datos ordenados en postorden:..")
     arbol.postorden()
+    print()
 
 if __name__ == '__main__':
     end = 0

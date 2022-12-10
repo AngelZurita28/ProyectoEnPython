@@ -16,7 +16,7 @@ class Cola:
         h.siguiente = n
 
     def imprimir(self):
-        h = self.head
+        h: Nodo = self.head
         cadena = ""
         while h is not None:
             cadena += h.imprimirNodo()
