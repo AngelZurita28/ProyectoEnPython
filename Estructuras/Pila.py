@@ -25,9 +25,8 @@ class Pila:
         return cadena
 
 if __name__ == '__main__':
-    end = 0
     p: Pila = Pila()
-    while end == 0:
+    while True:
         print("Ingresa un numero: ")
         dato = input()
         if dato.upper() == "i":

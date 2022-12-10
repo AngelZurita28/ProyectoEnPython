@@ -35,9 +35,8 @@ class Cola:
 
 
 if __name__ == "__main__":
-    end = 0
     cola = Cola()
-    while end == 0:
+    while True:
         print("agrege un dato a la cola.. [i para imprimir]")
         dato = input()
         if dato.lower() == "i":

@@ -29,9 +29,8 @@ class listaDoble:
 
 
 if __name__ == '__main__':
-    end = 0
     milista = listaDoble()
-    while end == 0:
+    while True:
         print("Ingrese un dato: ")
         milista.insertar(input())
         print(milista.imprimirLista())

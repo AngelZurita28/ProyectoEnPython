@@ -64,9 +64,8 @@ class ColaDoble:
         return "La cola esta vacia"
 
 if __name__ == "__main__":
-    end = 0
     cola = ColaDoble()
-    while end == 0:
+    while True:
         print("agrege un dato a la cola.. [i para imprimir]")
         dato = input()
         if dato.lower() == "i":

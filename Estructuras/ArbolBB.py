@@ -1,4 +1,4 @@
-from Nodo import NodoABB
+from Estructuras.Nodo import *
 
 class Arbol:
     raiz = NodoABB
@@ -96,9 +96,8 @@ def mostrarDatos(arbol):
     print()
 
 if __name__ == '__main__':
-    end = 0
     arbol = Arbol()
-    while end == 0:
+    while True:
         print("Ingrese un valor en el arbol [i para imprimir] [t para terminar programa]: ")
         dato = input()
         if dato.upper() == "T":
@@ -108,3 +107,4 @@ if __name__ == '__main__':
             mostrarDatos(arbol)
         else:
             arbol.insertar(dato)
+    input()
